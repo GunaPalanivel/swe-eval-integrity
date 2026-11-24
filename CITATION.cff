@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "Please cite this repository and identify the commit used."
+title: "SWE Eval Integrity"
+type: software
+authors:
+  - name: "GunaPalanivel"
+abstract: >-
+  Independent evaluation engineering methodology and reproducible demonstrations
+  for coding agent experiments.
+license: MIT
