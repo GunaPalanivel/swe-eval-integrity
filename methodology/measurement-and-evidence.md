@@ -26,10 +26,12 @@ duplicate or unexpected cases. Specify how case weights and workload sizes
 affect the aggregate. A mean of workload means can differ from a mean across
 all cases when workload sizes differ.
 
-Bind a report to the exact input bytes using content hashes. Reconstruct totals
+Bind a report to its inputs using a declared hashing scheme. Reconstruct totals
 from the case records, then compare the report's counts and score using a
 declared numerical tolerance. Test a deliberately inconsistent report. Hashes
-detect changes to bytes; they do not establish authorship or truth of the data.
+detect changes to the hashed representation; they do not establish authorship
+or truth of the data. Preserve separate file-byte hashes when exact archive or
+file identity matters.
 
 For model experiments, state sample size, eligible attempts, exclusions,
 cancellations, model and harness versions, budgets, scoring rule and uncertainty.

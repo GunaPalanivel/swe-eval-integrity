@@ -20,7 +20,7 @@ to public, reproducible evidence and maintain the disclosure boundary below.
 
 Admit only independently authored or specifically cleared files. Do not copy
 client tasks, internal criteria, hidden cases, reference solutions, platform
-exports, transcripts, identities, actual client scores, contractual documents,
+exports, transcripts, restricted task or personal identities, actual client scores, contractual documents,
 private paths or provider secrets. Anonymization alone does not establish rights.
 
 Before publication, enumerate an explicit allowlist of paths and review the

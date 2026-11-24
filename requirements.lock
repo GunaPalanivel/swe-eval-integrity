@@ -1,0 +1,4 @@
+# Runtime and study dependencies: none; Python >=3.11 standard library only.
+# Direct test, study and PYTHONPATH commands do not install anything.
+# Optional package builds use setuptools==80.9.0, pinned in pyproject.toml.
+# This file contains no runtime package requirements.

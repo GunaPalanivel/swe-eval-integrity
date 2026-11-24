@@ -1,0 +1,20 @@
+{
+  "case_count": 6,
+  "catalog_sha256": "3430941e8e7f79e335094a0f946047e623ff9123ec9df51c022cbb300f6a2058",
+  "outcomes_sha256": "4be14fbc20d68b033ddfedbf299994c86cdd444cf9404d3d3b7b3e8edc0ab1d1",
+  "passed_count": 3,
+  "schema_version": 1,
+  "score": 0.6,
+  "workloads": {
+    "lookup": {
+      "case_count": 2,
+      "passed_count": 1,
+      "score": 0.5
+    },
+    "sorting": {
+      "case_count": 3,
+      "passed_count": 2,
+      "score": 0.6666666666666666
+    }
+  }
+}

@@ -2,6 +2,7 @@ cff-version: 1.2.0
 message: "Please cite this repository and identify the commit used."
 title: "SWE Eval Integrity"
 type: software
+repository-code: "https://github.com/GunaPalanivel/swe-eval-integrity"
 authors:
   - name: "GunaPalanivel"
 abstract: >-

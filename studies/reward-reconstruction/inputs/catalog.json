@@ -1,0 +1,29 @@
+{
+  "cases": [
+    {
+      "case_id": "maple-01",
+      "workload": "sorting"
+    },
+    {
+      "case_id": "maple-02",
+      "workload": "sorting"
+    },
+    {
+      "case_id": "maple-03",
+      "workload": "sorting"
+    },
+    {
+      "case_id": "birch-01",
+      "workload": "lookup"
+    },
+    {
+      "case_id": "birch-02",
+      "workload": "lookup"
+    }
+  ],
+  "schema_version": 1,
+  "workload_counts": {
+    "lookup": 2,
+    "sorting": 3
+  }
+}

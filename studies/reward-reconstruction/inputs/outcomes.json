@@ -1,0 +1,26 @@
+{
+  "catalog_sha256": "3430941e8e7f79e335094a0f946047e623ff9123ec9df51c022cbb300f6a2058",
+  "outcomes": [
+    {
+      "case_id": "maple-01",
+      "score": 1
+    },
+    {
+      "case_id": "maple-02",
+      "score": 1
+    },
+    {
+      "case_id": "maple-03",
+      "score": 0
+    },
+    {
+      "case_id": "birch-01",
+      "score": 1
+    },
+    {
+      "case_id": "birch-02",
+      "score": 0
+    }
+  ],
+  "schema_version": 1
+}
