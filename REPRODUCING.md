@@ -22,9 +22,8 @@ The expected independent calculation is `3 / 5 = 0.6`. The two workloads contain
 three and two cases. The consistent report should be accepted and the report
 with altered counts should be rejected. Read the
 [study](studies/reward-reconstruction/README.md) for the prediction, exact inputs,
-controls and limits. These are expected outcomes, not a declaration that this
-revision has already passed execution. Record actual command output before
-claiming a successful repetition.
+controls and limits. See the [verification record](studies/reward-reconstruction/verification.json)
+for the tested revision, commands and observed results.
 
 ## Use the report checker
 
@@ -35,16 +34,18 @@ PowerShell:
 
 ```powershell
 $env:PYTHONPATH = 'src'
-python -m swe_eval_integrity catalog.json outcomes.json report.json
+$inputs = 'studies/reward-reconstruction/inputs'
+python -m swe_eval_integrity "$inputs/catalog.json" "$inputs/outcomes.json" "$inputs/report.json"
 ```
 
 Bash:
 
 ```bash
-PYTHONPATH=src python -m swe_eval_integrity catalog.json outcomes.json report.json
+inputs=studies/reward-reconstruction/inputs
+PYTHONPATH=src python -m swe_eval_integrity "$inputs/catalog.json" "$inputs/outcomes.json" "$inputs/report.json"
 ```
 
-Replace these three filenames with your actual inputs. A matching report emits
+A matching report emits
 JSON with `valid: true` and the reconstruction, and exits zero. Invalid data or
 an inconsistent report emits `valid: false` and exits one. Incorrect argument
 count exits two. Rejecting a deliberately invalid report is the expected

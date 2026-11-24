@@ -7,7 +7,8 @@ A plausible score can hide an incomplete test run, an incorrect grader, or an
 invalid comparison across attempts. This project develops checks for those
 failure modes and records what each check establishes. The research covers
 task design, Harbor-based execution, verifier integrity, model measurement and
-trajectory analysis.
+trajectory analysis in its methodology. The runnable public study reconstructs
+scores from saved case records.
 
 ## Run the first study
 

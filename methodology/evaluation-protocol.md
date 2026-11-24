@@ -13,7 +13,7 @@ the experiment contradicts the prediction.
 | Package validation | Can a clean environment build and run the intended artifact? | Bundle hash, manifest, image identity, inputs, and commands. |
 | Similarity review | Does the task measure substantially distinct work? | Comparison of objectives, interfaces, source area, solution and tests against the available corpus. |
 | Quality review | Do the instructions, verifier and reference agree? | Public requirements, assertions, tolerance rationale, valid alternatives, and reproduced review findings. |
-| Oracle and no-op | Are the reference ceiling and starting floor achievable? | Completed repeated controls, raw rewards, and verifier evidence for the exact package. |
+| Oracle and no-op | Does a reference implementation reach the intended score, and what does the untouched starting state earn? | Completed repeated controls, raw rewards, and verifier evidence for the exact package. |
 | Negative and alternative controls | Does the evaluator reject specific incorrect behavior and accept equivalent correct behavior? | Expected outcome for each control, observed result, and why the case distinguishes the two. |
 | Adversarial evaluation | Can an attempt earn credit without satisfying the contract? | Score, trajectory, observed behavior, and its relation to the specified outcome. |
 | Difficulty evaluation | How much can the target configuration solve? | Per-attempt score, eligibility, budget, configuration, exclusions, and scoring rule. |
@@ -34,7 +34,7 @@ study because they determine the meaning of the reported result.
 | Adversarial agent | Configuration unrecorded in this public account | Looks for ways to earn credit through a behavior the evaluator may accept erroneously. The trajectory determines the interpretation. |
 | Deterministic checker | Python standard library | Recalculates report totals from public case records so anyone can reproduce the first study. |
 
-The model names are observed configurations recorded by the maintainer on
+The model names are configuration labels reported by the maintainer on
 2026-11-25. The evidence identifies the assignments. The original model
 selection rationale, exact provider snapshots and comparable head-to-head runs
 are unavailable. These role descriptions explain what a configuration measures.

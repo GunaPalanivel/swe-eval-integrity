@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "verified_revision": "96bec5783c9018f4a5f5a99e80280f2762f93960",
+  "verification_date": "2026-11-25",
+  "evidence_scope": "independent public demonstration",
+  "environment": {
+    "os": "Windows",
+    "python": "3.13.2",
+    "machine": "AMD64"
+  },
+  "checks": {
+    "unit_tests": {
+      "command": "python -B -m unittest discover -s tests -v",
+      "exit_code": 0,
+      "tests_passed": 17
+    },
+    "study": {
+      "command": "python -B studies/reward-reconstruction/reproduce.py",
+      "exit_code": 0,
+      "saved_result_match": true
+    }
+  }
+}
