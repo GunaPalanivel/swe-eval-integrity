@@ -67,6 +67,12 @@ unit-test and demonstration commands with `PYTHONPATH=src`. The matrix describes
 the intended checks; consult the actual workflow result for a particular
 commit before claiming coverage.
 
+A fresh Windows checkout of revision `11e9f2b` passed all 26 tests with Python
+3.13.2 and reproduced all three saved results. GitHub Actions also passed all
+four OS and Python combinations on that revision.
+[Source snapshot](https://github.com/GunaPalanivel/swe-eval-integrity/tree/11e9f2bf722ac3c904c3f277d0a66f275473fcf3)
+· [CI run](https://github.com/GunaPalanivel/swe-eval-integrity/actions/runs/45689525244)
+
 No installation is required for those checks. If a `pyproject.toml` is present,
 an optional `python -m pip install --no-deps .` makes the module available
 without setting `PYTHONPATH`. Building a package may fetch its build backend;
