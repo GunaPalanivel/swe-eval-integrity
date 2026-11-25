@@ -31,3 +31,5 @@ jobs:
         run: python studies/reward-reconstruction/reproduce.py
       - name: Compare the two scoring rules
         run: python studies/scoring-unit/reproduce.py
+      - name: Distinguish a successful collector from a complete batch
+        run: python studies/incomplete-run/reproduce.py

@@ -1,0 +1,45 @@
+{
+  "corrected_reading": {
+    "exit_code": 0,
+    "mean": 3.0,
+    "reason": "all readings present",
+    "rows": [
+      {
+        "instrument": "north",
+        "status": "complete",
+        "value": 0
+      },
+      {
+        "instrument": "south",
+        "status": "complete",
+        "value": 3
+      },
+      {
+        "instrument": "east",
+        "status": "complete",
+        "value": 6
+      }
+    ]
+  },
+  "failed_reading": {
+    "exit_code": 0,
+    "mean": null,
+    "reason": "incomplete reading: east",
+    "rows": [
+      {
+        "instrument": "north",
+        "status": "complete",
+        "value": 0
+      },
+      {
+        "instrument": "south",
+        "status": "complete",
+        "value": 3
+      },
+      {
+        "instrument": "east",
+        "status": "parse_error"
+      }
+    ]
+  }
+}

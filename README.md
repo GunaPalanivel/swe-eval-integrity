@@ -1,47 +1,44 @@
 # SWE Eval Integrity
 
-Can a coding agent solve a software engineering task, and can we trust the
-score used to answer that question?
+SWE Eval Integrity tests whether a coding-agent score is supported by the work
+the agent completed. It gives benchmark authors and harness maintainers three
+offline experiments they can run when reviewing a grader, porting a benchmark
+or interpreting a batch of trials.
 
-A plausible score can hide an incomplete test run, an incorrect grader, or an
-invalid comparison across attempts. This project develops checks for those
-failure modes and records what each check establishes. The research covers
-task design, Harbor-based execution, verifier integrity, model measurement and
-trajectory analysis in its methodology. The runnable public study reconstructs
-scores from saved case records.
+## What can go wrong with a score?
 
-## Run the first study
+| Question | Experiment | Observed result |
+|---|---|---|
+| Can an incomplete implementation earn credit just by copying inputs? | [Change the unit of credit](studies/scoring-unit/README.md). Grade the same fraction converters by field and by completed record. | The copier earns 0.5 by field and 0 by record. Both correct converters earn 1 under either rule. |
+| Can a successful process leave a measurement missing? | [Inspect a batch after it exits](studies/incomplete-run/README.md). Change one instrument reading and rerun the same collector. | Both processes exit zero. Only the batch with three numeric observations has a mean. |
+| Can a report give the right score and still have the wrong denominator? | [Reconstruct the reward](studies/reward-reconstruction/README.md) from a fixed catalog and per-case outcomes. | Three of five cases passed. A report claiming six cases with the same score is rejected. |
 
-With Python 3.11 or later, run from the repository root.
+These results come from independently authored inputs and deterministic Python
+programs. Each study includes its prediction, controls and saved result.
+With Python 3.11 or later, run these commands from the repository root:
 
 ```sh
+python studies/scoring-unit/reproduce.py
+python studies/incomplete-run/reproduce.py
 python studies/reward-reconstruction/reproduce.py
 python -m unittest discover -s tests -v
 ```
 
-The study reconstructs a score of `3/5 = 0.6` from five artificial outcomes.
-It rejects a report that claims six cases while reporting the same score. The
-replay uses saved inputs and the Python standard library.
+## Applying the results to agent evaluations
 
-## What the research checks
+**Before reusing a benchmark**, identify the evaluated revision, what counted
+as a success, and which information the agent received. A change to partial
+credit can change the interpretation of a result even if the reference still
+earns full marks. [Benchmark transfer](methodology/benchmark-transfer.md)
 
-| Question | Evidence |
-| --- | --- |
-| Does the task measure a useful capability? | A documented behavior, an independent expected outcome, and a case that distinguishes a correct solution from a plausible wrong one. |
-| Can the grader tell? | A reference implementation, an untouched starting state, and targeted wrong and alternative solutions evaluated on the same artifact. |
-| How difficult is the task for an agent? | Eligible attempts under a recorded model, harness, effort and budget. Retain individual scores, exceptions and exclusions. |
-| Why did an attempt fail? | Identify the first consequential error and distinguish solver, specification, evaluator and environment failures. |
+**When diagnosing a failed run**, locate the first stage with contrary evidence.
+Package construction, quality review, reference controls, adversarial attempts
+and difficulty trials answer different questions. Record the raw outcome and
+the exact evaluated artifact at that stage. [Evaluation lifecycle](methodology/evaluation-lifecycle.md)
 
-The [evaluation protocol](methodology/evaluation-protocol.md) describes the
-stages and model roles. Observed configurations include Claude Opus 5.5 at
-`xhigh` for difficulty evaluation and `kimi-k3.1-pro` for quality review.
-The public study measures report consistency with artificial inputs.
+**When reporting model performance**, identify who attempted the task and who
+judged it. Observed configurations include Claude Opus 5.5 at `xhigh` for
+difficulty trials and `kimi-k3.1-pro` for quality review. The public replays
+require no model or credentials. [Model roles and protocol](methodology/evaluation-protocol.md)
 
-- [Evaluation lifecycle](methodology/evaluation-lifecycle.md)
-- [Measurement and evidence](methodology/measurement-and-evidence.md)
-- [Reward reconstruction study](studies/reward-reconstruction/README.md)
-- [Reproduction instructions](REPRODUCING.md)
-- [Research references](references/sources.bib)
-
-Maintained by GunaPalanivel. Cite the exact revision using [CITATION.cff](CITATION.cff).
-Source and independently authored examples are available under the [MIT license](LICENSE).
+[Reproduce the studies](REPRODUCING.md) · [Evidence and preservation](methodology/measurement-and-evidence.md) · [Research references](references/sources.bib) · [Cite the repository](CITATION.cff)

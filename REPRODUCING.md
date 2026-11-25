@@ -1,7 +1,7 @@
-# Reproducing the independent demonstration
+# Reproducing the studies
 
 Run commands from the repository root with Python 3.11 or later. The tests and
-demonstration use only the Python standard library. They need no model service,
+studies use only the Python standard library. They need no model service,
 credentials, network access or private workspace. Use `python3` or `py -3` in
 place of `python` if that is how your system selects the intended interpreter.
 
@@ -11,12 +11,14 @@ place of `python` if that is how your system selects the intended interpreter.
 python --version
 python -m unittest discover -s tests -v
 python studies/reward-reconstruction/reproduce.py
+python studies/scoring-unit/reproduce.py
+python studies/incomplete-run/reproduce.py
 ```
 
-The first command records the interpreter. The second runs the regression
-suite. The third compares a reconstruction with the study's saved expected
-output and exercises the deliberate wrong-count report. It prints JSON and
-must exit zero on agreement. It does not rewrite inputs or saved results.
+Each replay compares its observations to the committed `results.json`, prints
+JSON and exits zero on agreement. The batch study launches a fresh Python
+collector for each input. The scoring study runs five implementations against
+the same records. None of the commands rewrites the saved evidence.
 
 The expected independent calculation is `3 / 5 = 0.6`. The two workloads contain
 three and two cases. The consistent report should be accepted and the report
@@ -76,7 +78,7 @@ advance and document their versions and hashes.
 
 Record the Git commit, OS, architecture, exact Python version, commands, exit
 codes and output. Preserve source, study inputs and saved results together.
-This deterministic study has no random seed or external model. If a later
+These deterministic studies have no random seed or external model. If a later
 study introduces either, preserve the seed, model identity, provider date,
 configuration and the limits of replay.
 

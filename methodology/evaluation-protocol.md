@@ -31,11 +31,12 @@ study because they determine the meaning of the reported result.
 | --- | --- | --- |
 | Strong coding agent | Claude Opus 5.5 at `xhigh` | Measures achievable credit for a capable software engineering agent under a fixed harness and budget. Repeated attempts characterize variability. |
 | Quality reviewer | `kimi-k3.1-pro`, effort unrecorded | Reads the contract and evaluator together and flags discrepancies to investigate with executable witnesses or source review. |
-| Adversarial agent | Configuration unrecorded in this public account | Looks for ways to earn credit through a behavior the evaluator may accept erroneously. The trajectory determines the interpretation. |
+| Adversarial agent | Kimi K3.1 Pro at medium effort in one maintainer-observed run | Tests whether a plausible shortcut can earn credit. Inspect the output and replay the behavior before attributing a grader defect. |
 | Deterministic checker | Python standard library | Recalculates report totals from public case records so anyone can reproduce the first study. |
 
 The model names are configuration labels reported by the maintainer on
-2026-11-25. The evidence identifies the assignments. The original model
+November 25-26, 2026. They identify observed assignments, including a single
+adversarial configuration. The original model
 selection rationale, exact provider snapshots and comparable head-to-head runs
 are unavailable. These role descriptions explain what a configuration measures.
 
