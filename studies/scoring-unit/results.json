@@ -1,0 +1,40 @@
+{
+  "copy": {
+    "correct_records": [],
+    "field_score": 0.5,
+    "record_score": 0.0
+  },
+  "empty": {
+    "correct_records": [],
+    "field_score": 0.0,
+    "record_score": 0.0
+  },
+  "fraction_library": {
+    "correct_records": [
+      "alder",
+      "birch",
+      "cedar",
+      "elm"
+    ],
+    "field_score": 1.0,
+    "record_score": 1.0
+  },
+  "signed_reduction": {
+    "correct_records": [
+      "alder",
+      "birch",
+      "cedar",
+      "elm"
+    ],
+    "field_score": 1.0,
+    "record_score": 1.0
+  },
+  "unsigned_reduction": {
+    "correct_records": [
+      "alder",
+      "birch"
+    ],
+    "field_score": 0.75,
+    "record_score": 0.5
+  }
+}

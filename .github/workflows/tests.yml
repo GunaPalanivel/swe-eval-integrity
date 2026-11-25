@@ -29,3 +29,5 @@ jobs:
         run: python -m unittest discover -s tests -v
       - name: Reproduce independent study
         run: python studies/reward-reconstruction/reproduce.py
+      - name: Compare the two scoring rules
+        run: python studies/scoring-unit/reproduce.py
